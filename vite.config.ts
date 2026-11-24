@@ -30,7 +30,12 @@ export default defineConfig({
         scope: base,
         icons: [{ src: 'favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
       },
-      workbox: { globPatterns: ['**/*.{js,css,html,svg,png,woff,woff2}'] },
+      
+workbox: {
+  globPatterns: ['**/*.{js,css,html,svg,png,woff,woff2}'],
+  navigateFallbackDenylist: [/^\/api(?:\/|$)/],
+},
+
     }),
   ],
   test: {
